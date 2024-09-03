@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'open sans';
+}
+
+header{
+    background-color: white;
+    color: #fabb13;
+    display: flex;
+    flex-direction: row;
+    margin-inline: 40px;
+    justify-content:space-between ;
+    font-family: "open sans";
+}
+.header-title h1 {
+    font-weight: 300;
+}
+
+header a {
+    color: #fabb13;
+    text-decoration: none;
+    padding: 20px;
+   
+}
+header nav ul  {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    list-style-type: none;
+    gap: 20px;
+    font-size: 26px;
+    height:20px;
+    font-weight: 400;
+    padding: 20px;
+}
+
+
+header nav ul li a{
+    transition:color 200ms ease-in-out;
+}
+
+header nav ul li a:hover{
+    color: grey;
+}
+
+.accueil {
+    background-image:url(img/fond-agnes-taxi.jpg) ;
+    background-size: cover; /* Couvre toute la zone du header */
+    background-position: center; /* Centre l'image dans le header */
+    background-repeat: no-repeat;
+    padding: 114px 0 187px 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.accueil a{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 65px;
+}
+
+.accueil h1{
+    color: white;
+}
