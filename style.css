@@ -175,6 +175,10 @@ header nav ul li a:hover{
     width: 54px;
     height: 61px;
 }
+.a-propos .container .card .icon:hover{
+    background-color: #fabb13;
+    transition: 200ms ease-in-out;
+}
 
 .a-propos .container .card .icon img {
     max-width: 100%;
@@ -450,6 +454,11 @@ header nav ul li a:hover{
     align-items: center;
 }
 
+.icon:hover{
+    transition: 200ms ease-in-out;
+    background-color: #fabb13;
+}
+
 .icon img {
     max-width: 50%;
     max-height: 50%;
@@ -468,28 +477,41 @@ header nav ul li a:hover{
 footer{
     display: flex;
     flex-direction: row;
-    padding: 60px 100px;
+    padding: 44px 73px;
     background-color: #EDEFF2;
     gap: 20px;
     border-top:black 1px solid ;
+    justify-content: space-between;
 }
+
+footer div {
+    flex: 1; /* Chaque div occupe une largeur égale */
+    margin: 0 10px; /* Espacement horizontal entre les divs */
+
+}
+
 footer h3 {
+    display: flex;
     font-size: 25px;
     font-weight: 300;
     letter-spacing: 3px;
     color: #676770;
+    margin-bottom: 10px;
 }
 
 .propos{
-padding: 30px;
-width: auto;
-color: #616d77;
+    color: #616d77;
 }
 
-.plan{
-    height: 150px;
-    width: 300px;
+
+
+footer a {
+    display: block; /* Pour que les liens prennent toute la largeur disponible */
+    margin-bottom: 5px; /* Espacement entre les liens */
+    color: #333; /* Couleur des liens */
+    text-decoration: none; /* Retirer le soulignement des liens */
 }
+
 .plan a{
 padding: 10px;
 display: flex;
@@ -499,6 +521,3 @@ border-bottom: 1px solid #D5D5E0 ;
 text-decoration: none;
 }
 
-.social{
-    padding: 10px;
-}
