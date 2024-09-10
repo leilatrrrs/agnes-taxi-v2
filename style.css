@@ -9,9 +9,15 @@ header{
     color: #fabb13;
     display: flex;
     flex-direction: row;
-    margin-inline: 40px;
+
     justify-content:space-between ;
     font-family: "open sans";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Pour s'assurer que le header reste au-dessus du reste du contenu */
+    padding: 0px 40px;
 }
 .header-title h1 {
     font-weight: 300;
@@ -20,7 +26,8 @@ header{
 header a {
     color: #fabb13;
     text-decoration: none;
-    padding: 20px;
+    padding: 11px;
+    font-size: 21px;
    
 }
 header nav ul  {
@@ -102,6 +109,19 @@ header nav ul li a:hover{
     border-color: #fabb13; /* Change la couleur de la bordure au survol */
 }
 
+
+.fade-in-element, .call-btn-js {
+    opacity: 0; /* L'élément est invisible au départ */
+    transform: translateY(30px); /* Position initiale légèrement en dessous */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Transition douce */
+}
+
+/* Classe qui sera ajoutée via JS lorsque l'élément est visible */
+.show {
+    opacity: 1; /* L'élément devient visible */
+    transform: translateY(0); /* L'élément remonte à sa position initiale */
+}
+
 .a-propos {
     display: flex;
     flex-direction: column;
@@ -111,8 +131,8 @@ header nav ul li a:hover{
 }
 
 .a-propos h2{
-    margin-bottom: 16px;
-    font-size: 30px;
+    margin-bottom: 46px;
+    font-size: 2.5em;
     font-weight: 300;
     color: #676770;
     letter-spacing: 5px;
@@ -120,18 +140,23 @@ header nav ul li a:hover{
 }
 
 .a-propos p{
-    font-size: 18px;
+    font-size: 1.1em;
     color: #8e8e9c;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 3px;
     font-weight: 300;
+    margin-bottom: 36px;
 }
 .a-propos .container{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
 }
 .a-propos .container .card {
+    width: 300px;
     border: 1px solid #dcebf7;
     margin: 20px;
     padding: 20px;
@@ -169,6 +194,30 @@ header nav ul li a:hover{
     margin: 0 10px;
     font-size: 14px;
 }
+
+.card {
+    opacity: 0; /* Invisibles au départ */
+    transform: translateY(80px); /* Déplacées vers le bas */
+    transition: opacity 2s ease-out, transform 2s ease-out; /* Animation de l'opacité et de la position */
+}
+
+.card.show {
+    opacity: 1; /* Visibles quand la classe "show" est ajoutée */
+    transform: translateY(0); /* Retourne à la position initiale */
+}
+
+.card:nth-child(1).show {
+    transition-delay: 400ms;
+}
+
+.card:nth-child(2).show {
+    transition-delay: 450ms;
+}
+
+.card:nth-child(3).show {
+    transition-delay: 500ms;
+}
+
 .service-card {
     background-color: #ffffff; /* Couleur de fond du carré */
     border: 1px solid #616d77; /* Ajoute une bordure légère */
@@ -226,10 +275,14 @@ header nav ul li a:hover{
 }
 
 .presentation-vehicule h2 {
-    font-size: 2em;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
+    font-size: 2.5em;
+    letter-spacing: 5px;
+    margin-bottom: 46px;
+    font-weight: 300;
+}
 
+.presentation-vehicule .mercedes{
+    font-size: 5em;
 }
 
 .presentation-vehicule p {
@@ -237,6 +290,11 @@ header nav ul li a:hover{
     margin-bottom: 30px;
 }
 
+.presentation-vehicule .service{
+    font-size: 1.8em;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
 .container-vehicule-text {
     display: flex;
     justify-content: space-between;
@@ -259,12 +317,14 @@ header nav ul li a:hover{
 }
 
 .img-text-vehicule h3 {
-    font-size: 1.5em;
+    font-size: 1.8em;
+    font-weight: 300;
+    letter-spacing: 3px;
     margin: 20px 0 10px 0;
 }
 
 .img-text-vehicule p {
-    font-size: 1em;
+    font-size: 1.1em;
     margin-bottom: 20px;
 }
 
@@ -294,8 +354,10 @@ header nav ul li a:hover{
 }
 
 .info-vehicule{
+    font-size: 1.1em;
     text-align: center;
     color: #e8e8e8;
+    font-style: italic;
 }
 
 .tarifs{
