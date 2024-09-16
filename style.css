@@ -9,7 +9,6 @@ header{
     color: #fabb13;
     display: flex;
     flex-direction: row;
-
     justify-content:space-between ;
     font-family: "open sans";
     position: fixed;
@@ -17,7 +16,7 @@ header{
     left: 0;
     right: 0;
     z-index: 1000; /* Pour s'assurer que le header reste au-dessus du reste du contenu */
-    padding: 0px 40px;
+    width: 100%;
 }
 .header-title h1 {
     font-weight: 300;
@@ -30,7 +29,7 @@ header a {
     font-size: 21px;
    
 }
-header nav ul  {
+ nav ul  {
     display: flex;
     flex-direction: row;
     text-decoration: none;
@@ -51,6 +50,46 @@ header nav ul li a:hover{
     color: grey;
 }
 
+.menu-burger {
+    display: none;
+
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-right: 20px;
+    z-index: 1001; /* Pour s'assurer que l'icône est au-dessus du menu */
+}
+
+.menu-burger span {
+    display: block;
+    height: 3px;
+    background-color: #fabb13;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+}
+
+/* Animation pour la croix lorsque le menu est actif */
+.menu-burger.active span:nth-child(1) {
+    transform: rotate(50deg) translate(5px, 5px);
+}
+
+.menu-burger.active span:nth-child(2) {
+    opacity: 0; /* Cacher la ligne du milieu */
+}
+
+.menu-burger.active span:nth-child(3) {
+    transform: rotate(-50deg) translate(6px, -7px);
+}
+
+/* Changement de couleur du burger quand actif */
+.menu-burger.active span {
+    background-color: #fabb13; /* Ajustez la couleur si nécessaire */
+}
+
 .accueil {
     background-image:linear-gradient(to top left, rgba(21, 26, 31, 0.5), rgb(51 87 123 / 50%)), 
     url('img/fond-agnes-taxi.jpg');
@@ -62,6 +101,7 @@ header nav ul li a:hover{
     justify-content: center;
     text-align: center;
     flex-direction: column;
+    width: 100%;
 }
 
 .accueil .logo{
@@ -137,6 +177,7 @@ header nav ul li a:hover{
     color: #676770;
     letter-spacing: 5px;
     width: auto;
+    text-align: center;
 }
 
 .a-propos p{
@@ -156,7 +197,7 @@ header nav ul li a:hover{
 
 }
 .a-propos .container .card {
-    width: 300px;
+    width: 100%;
     border: 1px solid #dcebf7;
     margin: 20px;
     padding: 20px;
@@ -521,3 +562,129 @@ border-bottom: 1px solid #D5D5E0 ;
 text-decoration: none;
 }
 
+@media (max-width:975px) {
+    .a-propos .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container-logo-paiement{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-inline: 50%;
+    }
+}
+
+
+
+
+@media (max-width:596px) {
+    nav ul {
+        display: none;
+    }
+
+    /* Afficher l'icône du menu burger */
+    .menu-burger {
+        display: block;
+    }
+    
+    /* Styles du menu déroulant (lorsqu'il est visible) */
+    nav.active ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: white; /* Fond blanc */
+        z-index: 1000;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+    nav ul li a {
+        font-size: 24px; /* Ajustez la taille de la police */
+        color: #fabb13; /* Couleur des liens */
+        text-decoration: none;
+    }
+    .accueil{
+        padding:103px 0 74px 0;
+    }
+    .accueil img {
+        width: 43%;
+        margin-bottom: -32px
+    }
+    .accueil h1{
+        font-size: 2em;
+    }
+    .accueil h2{
+        font-size: 1.5em;
+    }
+    .call-btn {
+        font-size: 2.5em;
+    }
+    .call-btn-black{
+        font-size: 2.5em;
+    }
+    .a-propos h2{
+        font-size: 1.9em;
+    }
+    .a-propos, .tarifs{
+        padding: 50px
+    }
+    .vehicule{
+        padding: 50px 18px;
+    }
+    footer{
+        flex-direction: column;
+    }
+}
+
+@media (max-width:460px) {
+    .accueil {
+        padding: 103px 0 50px 0;
+    }
+    .accueil h1{
+        font-size: 1.5em;
+    }
+    .accueil h2{
+        font-size: 0.8em;
+    }
+    .call-btn {
+        font-size: 1.5em;
+    }
+    .call-btn-black{
+        font-size: 1.5em;
+    }
+    .a-propos h2, .presentation-vehicule h2, .presentation-vehicule .service, .tarifs h2{
+        font-size: 1.4em;
+        margin-bottom: 20px
+    }
+    .a-propos p, .tarifs p{
+        font-size: 1em;
+    }
+    .presentation-vehicule .mercedes  {
+        font-size: 3em;
+    }
+    .presentation-vehicule p{
+        font-size: 0.9em;
+    }
+    .container-vehicule-text{
+        margin-top: 0;
+    }
+    .img-text-vehicule{
+        margin-top: 0;
+    }
+    .img-text-vehicule h3{
+        font-size: 1.4em;
+    }
+    .img-text-vehicule p{
+        font-size: 0.9em;
+    }
+    .tarifs button {
+        font-size: 1.2em;
+    }
+}

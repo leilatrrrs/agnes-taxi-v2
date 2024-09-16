@@ -34,3 +34,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', checkVisibility);
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('.scroll-link');
+
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Empêche le comportement par défaut du lien
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+        });
+    });
+});
+

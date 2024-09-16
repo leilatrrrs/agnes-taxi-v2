@@ -15,15 +15,20 @@
         <a class="header-title" href="index.html"><h1>AGNES TAXI</h1></a> 
         <nav>
             <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Véhicule</a></li>
-                <li><a href="#">Tarifs</a></li>
+                <li><a href="#accueil" class="scroll-link">Accueil</a></li>
+                <li><a href="#vehicule" class="scroll-link">Véhicule</a></li>
+                <li><a href="#tarifs" class="scroll-link">Tarifs</a></li>
             </ul>
         </nav>
+        <div class="menu-burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
 
     <main>
-        <section class="accueil">
+        <section class="accueil" id="accueil">
             <a class="logo" href="index.html"><img src="img/logo-agnes-taxi.webp" alt="logo-agnes-taxi"></a> 
             <h1>AGNES TAXI - N° 2 LA TESTE DE BUCH</h1>
             <h2 class="fade-in-element">DEPUIS 2008</h2>
@@ -71,7 +76,7 @@
                 <a href="tel:+33607049794" class="call-btn-black"> 06 07 04 97 94</a>
 
         </section>
-        <section class="vehicule">
+        <section class="vehicule" id="vehicule">
             <div class="container-vehicule">
                 <div class="presentation-vehicule">
                     <h2>NOTRE VÉHICULE</h2>
@@ -108,10 +113,10 @@
                 </div>
             </div>
             <div>
-                <a href="tel:+33607049794" class="call-btn"> 06 07 04 97 94</a>
+                <a href="tel:+33607049794" class="call-btn .call-btn-js" > 06 07 04 97 94</a>
             </div>
         </section>
-        <section class="tarifs">
+        <section class="tarifs" id="tarifs">
             <div class="container-tarif">
                 <div class="presentation-tarif">
                     <h2>LES TARIFS</h2>
@@ -154,9 +159,9 @@
         </div>
         <div class="plan">
             <h3>PLAN DU SITE</h3>
-            <a href="#">Accueil</a>
-            <a href="#">Véhicule</a>
-            <a href="#">Tarifs</a>
+            <a href="#accueil" class="scroll-link" >Accueil</a>
+            <a href="#vehicule" class="scroll-link">Véhicule</a>
+            <a href="#tarifs" class="scroll-link">Tarifs</a>
         </div>
         <div class="social">
             <h3> SOCIAL</h3>
@@ -164,6 +169,22 @@
         </div>
     </footer>
 </body>
+<script>
+    const menuBurger = document.querySelector('.menu-burger');
+    const nav = document.querySelector('nav');
+
+    menuBurger.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        menuBurger.classList.toggle('active'); // Permet de transformer le burger en croix
+    });
+
+    nav.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+        nav.classList.remove('active');
+        menuBurger.classList.remove('active');
+    }})
+</script>
+
 <script src="script.js"></script>
 
 </html>
