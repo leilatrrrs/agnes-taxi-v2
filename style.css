@@ -23,7 +23,7 @@ header{
 }
 
 header a {
-    color: #fabb13;
+    color: #fabc13;
     text-decoration: none;
     padding: 11px;
     font-size: 21px;
@@ -459,11 +459,11 @@ header nav ul li a:hover{
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 80px;
-    padding-bottom: 10px;
 }
 .tarifs button a {
     text-decoration: none;
     color: #616d77;
+    padding: 5px;
 }
 .tarifs button:hover,
 .tarifs button a:hover {
@@ -515,7 +515,7 @@ header nav ul li a:hover{
 }
 
 
-footer{
+.footer-case{
     display: flex;
     flex-direction: row;
     padding: 44px 73px;
@@ -560,6 +560,9 @@ flex-direction: column;
 color: #616d77;
 border-bottom: 1px solid #D5D5E0 ;
 text-decoration: none;
+}
+#current-year{
+    color: #fabb13;
 }
 
 @media (max-width:975px) {
@@ -664,7 +667,7 @@ text-decoration: none;
         margin-bottom: 20px
     }
     .a-propos p, .tarifs p{
-        font-size: 1em;
+        font-size: 0.9em;
     }
     .presentation-vehicule .mercedes  {
         font-size: 3em;
@@ -691,5 +694,24 @@ text-decoration: none;
         gap: 20px;
         margin-top: 40px;
         margin-bottom: 40px;
+    }
+}
+@media (max-width:395px) {
+    .a-propos .container .card{
+        width: 77%;
+    }
+    .container-logo-paiement{
+        gap: 8px;
+    }
+    .tarif-card{
+        width: 155px;
+        height: 155px;
+    }
+    .icon{
+        width: 79px;
+        height: 79px;
+    }
+    .container-img-text-vehicule img{
+        height: auto;
     }
 }
