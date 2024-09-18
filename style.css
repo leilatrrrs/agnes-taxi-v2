@@ -527,7 +527,7 @@ header nav ul li a:hover{
 
 footer div {
     flex: 1; /* Chaque div occupe une largeur égale */
-    margin: 0 10px; /* Espacement horizontal entre les divs */
+    margin: 0 ; /* Espacement horizontal entre les divs */
 
 }
 
@@ -553,6 +553,17 @@ footer a {
     text-decoration: none; /* Retirer le soulignement des liens */
 }
 
+#current-year{
+    color: #fabb13;
+}
+.footer-footer{
+    justify-content: center;
+}
+.footer-footer p{
+    display: flex;
+    justify-content: center;
+}
+
 .plan a{
 padding: 10px;
 display: flex;
@@ -560,9 +571,6 @@ flex-direction: column;
 color: #616d77;
 border-bottom: 1px solid #D5D5E0 ;
 text-decoration: none;
-}
-#current-year{
-    color: #fabb13;
 }
 
 @media (max-width:975px) {
@@ -641,7 +649,7 @@ text-decoration: none;
     .vehicule{
         padding: 50px 18px;
     }
-    footer{
+    .footer-case{
         flex-direction: column;
     }
 }
